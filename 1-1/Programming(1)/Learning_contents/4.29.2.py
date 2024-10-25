@@ -1,0 +1,21 @@
+result_1 = 3//2
+result_2 = 3/2
+
+print(result_1,result_2)
+
+for i in range(6):
+    print(i%3)
+    
+count = 1
+
+for dan in range(2,10):
+    for num in range(1,10):
+        print(dan, "X",num,"=",(dan*num))  
+        
+    if count % 3 == 0:
+        print("==================")  
+    
+    count += 1
+    
+
+    
