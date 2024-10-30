@@ -26,34 +26,30 @@ public class progrem3 {
             switch (code) {
                 case "E1":
                     // E1　18歳以上のみ可
-                    if (age >= 18) {
-                        System.out.println("予約完了");
-                        break;
-                    } else {
+                    if (age < 18) {
                         System.out.println("年齢制限のため不可");
-                        break;
+                    } else {
+                        System.out.println("予約完了");
                     }
+                    break;
                 case "E2":
                     // E2 偶数の日付のみ可
                     if (day % 2 == 0) {
                         System.out.println("予約完了");
-                        break;
                     } else {
                         System.out.println("日付制限のため不可");
-                        break;
                     }
+                    break;
                 case "E3":
                     //　E3　16歳以上で７の倍数の日付のみ
                     if (age < 16) {
                         System.out.println("年齢制限のため不可");
-                        break;
                     } else if (day % 7 != 0) {
                         System.out.println("日付制限のため不可");
-                        break;
                     } else {
                         System.out.println("予約完了");
-                        break;
                     }
+                    break;
                 default:
                     System.out.println("無効な⼊⼒です。プログラムを終了します");
             }
