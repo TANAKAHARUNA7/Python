@@ -20,6 +20,7 @@ public class progrem3 {
         int day = sc.nextInt();
 
 
+        // 入力に合わせて結果を出力
         if (day >= 1 && day <= 30){
 
             switch (code) {
