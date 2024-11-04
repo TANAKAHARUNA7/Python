@@ -64,19 +64,20 @@ public class test3 {
             if ((end - start) + 1 > inputN) {
                 break;
             }
+            System.out.println("배열의 크기보다 큰 범위를 입력하세요.");
         }
 
         // start <= 난수 <= end 범위의 랜덤 정수를 N개 생성
-        for (int i = 0 ; i < inputN ; i++) {
+        for (int i = 0 ; i < array.length ; i++) {
             // 사용자로부터 랜덤으로 범위를 지정하는 start, end 의 값을 받는다
-            double randoNum = (int)((Math.random() * start ) + end + 1 ) ;
+            double randoNum = (int)(Math.random() * (end - start) + 1 ) + start;
             array[i] = (int)randoNum;
         }
 
         // task3
         // 생성된 배열의 모든 요소 값을 출력
         for (int value : array){
-            System.out.println(value);
+            System.out.print(value + ",");
         }
     }
 }

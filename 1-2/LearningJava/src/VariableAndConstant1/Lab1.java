@@ -1,4 +1,4 @@
-package Lab;// 入力を受けるモデュール
+package VariableAndConstant1;// 入力を受けるモデュール
 import java.util.Scanner;
 
 public class Lab1 {
