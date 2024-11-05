@@ -55,17 +55,15 @@ public class test3 {
         int end = 0;
 
         // (end - start + 1)의 값이 배열의 크기 N보다 작은 경우 재입력
-        while (true) {
+
             System.out.println("start値を入してください：　");
             start = sc.nextInt();
             System.out.println("end値を入してください：　");
             end = sc.nextInt();
 
-            if ((end - start) + 1 > inputN) {
-                break;
-            }
-            System.out.println("배열의 크기보다 큰 범위를 입력하세요.");
-        }
+
+
+
 
         // start <= 난수 <= end 범위의 랜덤 정수를 N개 생성
         for (int i = 0 ; i < array.length ; i++) {

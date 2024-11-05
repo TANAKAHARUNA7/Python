@@ -56,8 +56,10 @@ public class test5 {
             int computerInput = (int) (Math.random() * 3);
 
             String msg = "";
+
+
             // computer -> Scissors의 경우
-            if (computerInput == 0 && selectedValue == 0) {
+            if (computerInput == 0 && selectedValue == 0 ) {
                 msg = "무승부 : 사용자 - 가위, 컴퓨터 가위";
             } else if (computerInput == 0 && selectedValue == 1) {
                 msg = "승리 : 사용자 - 가위, 컴퓨터-보";
