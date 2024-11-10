@@ -2,7 +2,7 @@ package special_class;
 
 import java.util.Scanner;
 
-public class progrem3 {
+public class Q_3 {
     public static void main (String [] args){
         // 事前予約システムのロジックをシミュレートするプログラムを作成する。
         // ユーザが特定のイベントの事前予約を進めるとき、ユーザの⼊⼒に応じて

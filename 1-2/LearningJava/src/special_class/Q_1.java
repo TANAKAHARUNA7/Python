@@ -2,7 +2,7 @@ package special_class;
 
 import java.util.Scanner;
 
-public class progrem1 {
+public class Q_1 {
     public static void main(String[] args) {
 
         // 利用者から入力をうける

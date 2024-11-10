@@ -2,7 +2,7 @@ package special_class;
 
 import java.util.Scanner;
 
-public class progrem2 {
+public class Q_2 {
     public static void main(String [] age) {
         Scanner sc = new Scanner(System.in);
 

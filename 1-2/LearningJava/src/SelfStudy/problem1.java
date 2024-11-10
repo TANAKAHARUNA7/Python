@@ -2,7 +2,7 @@ package SelfStudy;
 
 import java.util.Scanner;
 
-public class probrem1 {
+public class problem1 {
     public static void main(String [] args){
         // 도서관에서는 나이에 따라 다양한 이용권을 제공함.
         // 사용자의 나이를 입력받아, 해당 사용자에게 적합한 도서관 이용권을 판별하는 프로그램을 작성.

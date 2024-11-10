@@ -55,20 +55,20 @@ public class test3 {
         int end = 0;
 
         // (end - start + 1)의 값이 배열의 크기 N보다 작은 경우 재입력
-
-            System.out.println("start値を入してください：　");
-            start = sc.nextInt();
-            System.out.println("end値を入してください：　");
-            end = sc.nextInt();
-
-
-
-
+           while (true) {
+               System.out.println("start値を入してください：　");
+               start = sc.nextInt();
+               System.out.println("end値を入してください：　");
+               end = sc.nextInt();
+               if (end - start + 1 > inputN){
+                   break;
+               }
+           }
 
         // start <= 난수 <= end 범위의 랜덤 정수를 N개 생성
         for (int i = 0 ; i < array.length ; i++) {
             // 사용자로부터 랜덤으로 범위를 지정하는 start, end 의 값을 받는다
-            double randoNum = (int)(Math.random() * (end - start) + 1 ) + start;
+            double randoNum = (int)(Math.random() *((end - start) + 1 ))+ start;
             array[i] = (int)randoNum;
         }
 
