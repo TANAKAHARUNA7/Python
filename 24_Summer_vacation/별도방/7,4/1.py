@@ -17,6 +17,7 @@ f_handler = open("c:/foo/bar/test.txt", "r")
 # ファイルの内容を読んで返還する
 msg = f_handler.read()
 
+# ファイル出力
 print(msg)
 
 # オープンされたファイルを閉じる
