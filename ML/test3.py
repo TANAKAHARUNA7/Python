@@ -20,12 +20,13 @@ for _ in range(10):
     loss = np.mean((y_pred - y) ** 2)
 
     # wに関する勾配：∂Loss/∂w
+    # 微分するために2を掛ける
     dw = np.mean(2 * (y_pred - y) * x)
 
     # bに関する勾配：∂Loss/∂b
     db = np.mean(2 * (y_pred - y))
 
-    # パラメーターを更新：勾配の方向に少しずつ動かしてLossを減らす
+    # パラメーターを更新：勾配の方向に少しずつ動かしてLossを減らすMicrosoft.QuickAction.BlueLightReduction
     w = w - alpha * dw
     b = b - alpha * db
 
