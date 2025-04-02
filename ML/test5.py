@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 #fewfwgregehrh
 # input : input data, feature
 # H(x) -> input data : x1 -> xn
-x_train = [ np.random.rand()  * 10 for _ in range(60)]
+x_train = [ np.random.rand()  * 10 for _ in range(50)]
 # 50
 # output : label
 # f(x) -> f(x2)
@@ -19,7 +19,7 @@ y_train = [val + np.random.rand() * 5 for val in x_train]
 
 w = 0.0 # 초기 가중치
 b = 0.0
-learning_rate = 0.01 # 학습률 0.001
+learning_rate = 0.001 # 학습률 
 epoch = 50  # 반복 횟수(학습률)
 loss_history = []
 
