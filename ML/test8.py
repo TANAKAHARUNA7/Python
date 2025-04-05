@@ -24,5 +24,4 @@ model.fit(X, y)
 #　評価
 # Loss
 y_pred = model.predict(X)
-
 mse = mean_squared_error(y, y_pred)
