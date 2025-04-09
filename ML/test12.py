@@ -25,10 +25,10 @@ print(f"傾き（coef_）: {model.coef_[0]:.2f}")
 print(f"切片（intercept_）: {model.intercept_[0]:.2f}")
 
 x_line = np.linspace(0, 10, 100).reshape(-1, 1)
-y_line = model.predict(x_line)
+y_line = model.predict(x_line) # モデルにそのxを入れて、それぞれに対するyの予測を出す
 
 plt.scatter(X, y, label = 'Date', alpha=0.6)
-plt.plot(x_line, y_line, color='red', label='SGD Regression Line')
+plt.plot(x_line, y_line, color='red', label='SGD Regression Line') 
 plt.xlabel("X")
 plt.ylabel("y")
 plt.title("Linear Regression with SGDRegressor")

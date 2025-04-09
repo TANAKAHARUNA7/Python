@@ -1,20 +1,20 @@
 import numpy as np
 
-# <class 'numpy.ndarray'> -> numpy의 배열 객체
-# radom.rand() : 0~1 사이의 랜덤한 값을 생성
-# rand() : 차원을 의미함
-print(type(np.random.rand(2, 3)))
+# <class 'numpy.ndarray'> → NumPyの配列オブジェクト（ndarray型）であることを意味する
+# random.rand() : 0〜1の間の乱数を生成する関数
+# rand() の引数は「配列の形（次元）」を意味する
+print(type(np.random.rand(2, 3)))  # 出力は <class 'numpy.ndarray'>
 
-# set_printoptions : numpy 배열의 출력 형식 설정
-# suppress : 지수 표기법을 사용하지 않음 (기본값 = False)
-# precision : 소수점 이하 자릿수 (기본값 = 8)
-np.set_printoptions(suppress = 1e-5, precision = 2) 
+# set_printoptions：NumPy配列の出力形式を設定する関数
+# suppress=True：指数表記（例: 1e-5）を使わず、通常の小数で表示
+# precision=2：小数点以下2桁まで表示（例: 0.13）
+np.set_printoptions(suppress=True, precision=2)
 
-# 2행 3열의 랜덤한 값 생성
-bar = np.random.rand(2, 3) 
-
-print(bar) # 2차원 배열
+# 2行3列の乱数を生成
+bar = np.random.rand(2, 3)
+print(bar)  # 2次元配列（行列）
 print("----" * 10)
 
-bar = bar * 10 # 0~10 사이의 랜덤한 값 생성
-print(bar) 
+# 各要素に10を掛ける → 0〜10の間の乱数にスケール変換
+bar = bar * 10
+print(bar)

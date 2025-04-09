@@ -25,7 +25,6 @@ axes[0].legend()
 
 x_val = np.linspace(0, 10, 100)
 y_val = model.coef_[0, 0] * x_val + model.intercept_[0]
-print(x_val[:5], y_val[:5])
 
 axes[1].scatter(x, y, color='blue', label='Original Data')
 axes[1].plot(x_val, y_val, color='red', label='Regression Line')
