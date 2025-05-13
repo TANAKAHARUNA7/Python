@@ -22,7 +22,7 @@ num_features = X_train.shape[1] # 30
 
 w = np.random.randn(num_features, 1)
 b = np.random.randn()
-learning_rate = 
+learning_rate = 0.01
 
 np.set_printoptions(suppress=True, precision=5)
 # z = wx + b
@@ -47,4 +47,4 @@ w = w - learning_rate * gradient_w
 b = b - learning_rate * gradient_b
 
 # calculate loss
-loss = -np.mean(y_train * np.log(prediction)) - 1(1-y)*np.log(1-prediction)
+loss = -np.mean(y_train * np.log(prediction)) + (1-y)*np.log(1-prediction)
