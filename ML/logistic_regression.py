@@ -22,17 +22,29 @@ num_features = X_train.shape[1] # 30
 
 w = np.random.randn(num_features, 1)
 b = np.random.randn()
+learning_rate = 
+
 np.set_printoptions(suppress=True, precision=5)
 # z = wx + b
 z = X_train @ w + b
 print(z)
 
-# prediction = 1 / (1 + e(-z))
+# prediction = 1 / (1 + e^(-z))
 prediction = 1 / (1 + np.exp(-z))
 
 print(prediction)
 print(prediction.shape)
+
 # error = prediction - y_train
+error = prediction - y_train
+
 # gradient_w, gradient_b
+gradient_w = X_train.T @ error / len(X_train)
+gradient_b = error.mean()
+
 # update parameters : w, b
+w = w - learning_rate * gradient_w
+b = b - learning_rate * gradient_b
+
 # calculate loss
+loss = -np.mean(y_train * np.log(prediction)) - 1(1-y)*np.log(1-prediction)
