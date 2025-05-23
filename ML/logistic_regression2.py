@@ -25,7 +25,7 @@ X_test = scaler.transform(X_test) # 同じ基準で標準化（fitしない
 y_train = y_train.reshape(-1, 1)
 y_test = y_test.reshape(-1, 1)
 
-
+# 5. 重みw（30個）とバイアスbを初期化
 w = np.random.randn(X_train.shape[1], 1)# 30個の特徴に対応する重みを、1列のベクトルとして初期化
 b = np.random.randn()
 learning_rate = 0.01
@@ -37,31 +37,36 @@ for epoch in range(epochs):
     z = X_train @ w + b
 
     # sigmoid(z) -> 1 / (1+e^-z)
+    # シグモイド関数で確率に変換（0~1）
     prediction = 1 / (1 + np.exp(-z))
 
-    # Error
+    # 予測と正解との誤差
     error = prediction - y_train
 
-    # Get gradient for w and b
-    gradient_w = X_train.T @ error / len(X_train)
+    # w, b に対する勾配（偏微分）を計算
+    gradient_w = X_train.T @ error / len(X_train) # 誤差を使って重みの更新方向を決定
     gradient_b = error.mean()
 
-    # Update parameter values of each w and b
+    # パラメータを更新
     w -= learning_rate * gradient_w
     b -= learning_rate * gradient_b
 
-    # Display the loss value of the current epoch
+    # 1000エポックごとにロス（損失）を表示
     if epoch % 1000 == 0:
         loss = -y_train*np.log(prediction + 1e-15) - ( 1 - y_train)*np.log(1-prediction + 1e-15)
         print(loss.mean())
         
         
-# w -> 30개와 b 값
+# 小数点以下の表示設定
 np.set_printoptions(suppress=True, precision=15)
+
+# テストデータに対する予測
 test_z = X_test @ w + b
 test_prediction = 1 / (1 + np.exp(-test_z))
+
+# 閾値0.5でクラス分け（0 or 1）
 test_result = (test_prediction >= 0.5).astype(int)
 
+# 正解率（accuracy）を計算
 accuracy = np.mean((test_result == y_test).astype(int))
-
 print(accuracy)
