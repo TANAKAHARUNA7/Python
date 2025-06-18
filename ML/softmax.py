@@ -28,10 +28,40 @@ scaler = StandardScaler()    # StandardScalerオブジェクトの生成
 X_train_std = scaler.fit_transform(X_train)   # 学習データでスケーラーを学習＆変換
 X_test_std = scaler.transform(X_test)         # テストデータは学習時のスケーラーを使用して変換
 
+
+np.set_printoptions(suppress=True)
+
 num_features = X_train_std.shape[1]  # 入力データ次元 (64)
 num_sample = X_train_std.shape[0]    # 学習sample
-num_class = 10                       # 分割クラス個数(0~9)
+num_classes = 10                     # 分割クラス個数(0~9)
 
-W = np.random.randn() 
+W = np.random.randn(num_features, num_classes) # 64, 10 
+b = np.zeros(num_classes) # 10, 
+learning_rate = 0.01
+epochs = 10000
 
-print(num_sample, num_features)
+for epoch in range(epochs):
+
+    # X (1437, 64) @ w (64, 10) + b (10, )
+    logit = X_train_std @ W + b # 1437, 10
+    logit_max = np.max(logit, axis=1, keepdims=True)
+    logit -= logit_max
+    exp_logit = np.exp(logit)
+    exp_logit_sum = np.sum(exp_logit, axis=1, keepdims=True)
+    softmax = exp_logit / exp_logit_sum
+
+    i_matrix = np.eye(num_classes)
+    one_hot = i_matrix[y_train]
+
+    # error = softmax(1437 - 10) - one_hot (1437 )
+    error = softmax - one_hot
+
+    gradient_w = X_train_std.T @ error / num_sample
+    gradient_b = np.sum(error, axis=0) / num_sample
+
+    W -= learning_rate * gradient_w
+    b -= learning_rate * gradient_b
+    loss = np.log(softmax + 1e-15) * one_hot
+
+    if epoch % 1000 == 0:
+        print(loss)
