@@ -22,3 +22,4 @@ class Child(Parent):
                 
 obj = Child()
 print(obj.name)
+print(Child.__mro__)
