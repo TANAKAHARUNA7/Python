@@ -4,44 +4,43 @@ class Student:
     
     # 생성자 
     # 메개 변수:name, id->id_count 값을 부여, gender
-    def __init__(self,name, id, gender):
+    def __init__(self, name, id, gender):
         self.name = name
+        self.id = id
         self.id = Student.__id_count
         self.gender = gender
-        self.age = None
+        
         # 객체 생성되면 id_count를 1 증가
-        self.grade_korea = 0
-        self.grade_math = 0
-        self.grade_english = 0
-        self.total = 0
-        self.avg = 0
-        
-        
-    
+        Student.__id_count += 1
+      
     # instansmethod
     # 국·영·수 점수를 입력받아 멤버 변수에 저장
-    def set_score(self, korea, math, eng):
-        self.grade_korea = korea
+    def set_score(self, korean, math, eng):
+        self.grade_korean = korean
         self.grade_math = math
-        self.grade_english = eng 
+        self.grade_eng = eng
+        
         # total과 avg를 계산하여 멤버 변수에 저장
-        self.total = self.grade_korea + self.grade_math + self.grade_english
-        self.avg = self.total / 3 
-
+        self.total = self.grade_korean + self.grade_math + self.grade_eng
+        self.avg = self.total / 3  
+    
     def get_total_avg(self):
-        return self.total,self.avg
-
+        return self.total, self.avg
+    
     # classmethod
     # 현재 생성된 객체 수(__id_count)를 반환
     @classmethod
     def get_id_count(cls):
-        return Student.__id_count
-    
+        return cls.__id_count
+
     # staticmethod
     # 세 과목 점수를 인자로 받아 평균을 반환할 것
     @staticmethod
     def get_avg(arg1, arg2, arg3):
-        return (arg1 + arg2 + arg3) / 3 
+        total = arg1 + arg2 + arg3
+        avg = total / 3
+        return total, avg
+
         
 # 객체 생성
 s1 = Student("Alice", 15, "F")
