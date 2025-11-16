@@ -1,3 +1,4 @@
+
 def is_login(func):
     def wrapper(msg:str, int:int):
         print(f"before")
@@ -8,9 +9,11 @@ def is_login(func):
 
 
 @is_login # do_something = is_login(do_something)
+# デコレーターの下にある関数が基本の関数
 def do_something(msg:str, int:int):
     print(f"do something: {msg}{int}")
     
 do_something("h1",1) # wrapper("h1")
 do_something("h2",2)
+
 
